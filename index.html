@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+<style>
+.edit{
+  border:2px solid red;
+  border-radius: 30px;
+  background-color: pink;
+}
+  .row{
+    margin-top:20px;
+    margin-block: 20px;
+    
+   
+  }
+  .row input {
+    display: flex;
+    justify-items: center;
+    
+    margin:20px;
+    color:green;
+   
+    
+  }
+  h1{
+   text-align: center;
+  }
+  #button{
+    margin-left: 25%;
+    color:green;
+    border-radius: 5px;
+  }
+  #button:hover{
+    background-color:red;
+    color:white;
+    transition: 0s;
+  }
+  #pub{
+    color:blue;
+    font-weight: bolder;
+   
+  }
+  h3{
+    text-align: center;
+    color: orange;
+  }
+  h2{
+    text-align: center;
+    color:Blue;
+  }
+  .alert{
+    border:2px solid brown;
+    text-align: center;
+    color:red;
+  }
+</style>
+</head>
+
+<body>
+  <div class="edit">
+  <h1>
+    GRADES CALCULATE 
+  </h1>
+  <div class="row">
+    <span>
+ <input id="account" type="number" placeholder="Account 100 Samma Matroi..">
+    <input id="Maths" type="number" placeholder="Maths 100 Samma Matroi..">  <input id="Social" type="number" placeholder="Social 100 Samma Matroi..">  <input id="Nepali" type="number" placeholder="Nepali 100 Samma Matroi..">  <input id="Science" type="number" placeholder="Science 100 Samma Matroi.." >
+      <input id="English" type="number" placeholder="English 100 Samma Matroi..">
+      </span>
+      <button id="button" onclick="cal()">Calculate</button>
+      <p id="pub"></p>
+      
+  </div>
+  </div>
+  <h3>COPYRIGHT&COPY;BY NARESH BHATTARAI</h3>
+ <div class="alert">
+  <h2>ध्यान दिनुहोला!</h2>
+  <p>∆ आफ्नो विषयमा लिएको अङ १०० भन्दा माथि नराख्नु होला।</p>
+</div>
+<script>
+  const cal=()=>{
+  let account=document.getElementById("account").value;
+  let maths=document.getElementById("Maths").value;
+  let social=document.getElementById("Social").value;
+  let nepali=document.getElementById("Nepali").value;
+  let science=document.getElementById("Science").value;
+  let english=document.getElementById("English").value;
+  let total= parseInt(account)+parseInt(maths)+parseInt(social)+parseInt(nepali)+parseInt(science)+parseInt(english);
+ 
+  let per=(total)/600*100;
+  
+   
+ 
+  if(per<=100 && per>=90){
+    GRADES='A';
+    
+  }
+  else if(per<=89 && per>=70){
+    GRADES='B';
+  }
+  else if(per<=69 && per>=50){
+    GRADES='C';
+  }
+  else{
+    GRADES='D';
+  }
+  if(per>=40){
+    document.getElementById("pub").innerHTML=`  Out Of 600 Your Total Is ${total} And Percentage Is ${per}% Your Grades Is ${GRADES}.You  Are Pass🥰`
+  }
+    
+  else{
+  document.getElementById("pub").innerHTML=`  Out Of 600 Your Total Is ${total} And Percentage Is ${per}%.Your Grades Is ${GRADES}.You Are Fail😥`
+  }
+  }
+</script>
+</body>
+
+</html>
